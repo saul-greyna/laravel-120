@@ -1,8 +1,11 @@
-// Manejo de la transición entre las vistas de login y registro
-document.querySelector('.login-btn').addEventListener('click', function() {
-    document.querySelector('.container').classList.add('active');
+const container = document.querySelector('.container');
+const registerBtn = document.querySelector('.register-btn');
+const loginBtn = document.querySelector('.login-btn');
+
+registerBtn.addEventListener('click', () => {
+    container.classList.add('active');
 });
 
-document.querySelector('.register-btn').addEventListener('click', function() {
-    document.querySelector('.container').classList.remove('active');
+loginBtn.addEventListener('click', () => {
+    container.classList.remove('active');
 });

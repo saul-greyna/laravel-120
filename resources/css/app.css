@@ -1,13 +1,3 @@
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Poppins', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 * {
@@ -19,7 +9,7 @@
     text-decoration: none;
 }
 
-main {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +53,14 @@ form {
     text-align: center;
     padding: 40px;
     z-index: 1;
-    transition: 0.6s ease-in-out 1.2s, visibility 0s 1.2s;
+}
+
+.container.active .form-box {
+    right: 50%;
+}
+
+.form-box.register {
+    visibility: visible;
 }
 
 .input-box {
@@ -148,7 +145,6 @@ form {
     z-index: 2;
     background: #f5af19;
     border-radius: 150px;
-    transition: 1.8s ease-in-out;
 }
 
 .container.active .toggle-box::before {
@@ -165,28 +161,23 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: .6s ease-in-out;
 }
 
 .toggle-panel.toggle-left {
     left: 0;
-    transition-delay: 1.2s;
 }
 
 .container.active .toggle-panel.toggle-left {
     left: -50%;
-    transition-delay: .6s;
 }
 
 .toggle-panel.toggle-right {
-    right: -50%;
-    transition-delay: .6s;
+    right: 50; /* Asegura que el div .toggle-panel.toggle-right se posicione correctamente */
 }
 
 .container.active .toggle-panel.toggle-right {
-    right: 0;
-    transition-delay: 1.2s;
-}   
+    right: 0; /* Lo mueve al lugar correcto cuando se activa la vista de registro */
+}
 
 .toggle-panel p {
     margin-bottom: 20px;
@@ -198,4 +189,68 @@ form {
     box-shadow: none;
     background: transparent;
     border: 2px solid #fff;
+}
+
+
+@media screen and (max-width: 650px) {
+    .container {
+        height: calc(100vh - 40px);
+    }
+
+    .form-box {
+        width: 100%;
+        height: 70%;
+        bottom: 0;
+    }
+
+    .container.active .form-box {
+        right: 0;
+        bottom: 30%;
+    }
+
+    .toggle-box::before {
+        width: 100%;
+        left: 0;
+        top: -270%;
+        height: 300%;
+        border-radius: 20vw;
+    }
+
+    .toggle-panel {
+        width: 100%;
+        height: 30%;
+    }
+
+    .toggle-panel.toggle-left {
+        top: 0;
+    }
+
+    .toggle-panel.toggle-right {
+        bottom: -30%;
+        right: 0;
+    }
+    
+    .container.active .toggle-box::before {
+        top: 70%;
+        left: 0;
+    }
+
+    .container.active .toggle-panel.toggle-left {
+        left: 0;
+        top: -30%;
+    }
+
+    .container.active .toggle-panel.toggle-right {
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .form-box {
+        padding: 20px;
+    }
+
+    .toggle-panel h1 {
+        font-size: 30px;
+    }
 }
