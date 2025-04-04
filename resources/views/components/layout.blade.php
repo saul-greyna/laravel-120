@@ -26,7 +26,7 @@
     </main>
 
     <footer>
-        <p>© 2025 Paquetería</p>
+        <p>© 2025 Saul Reyna</p>
     </footer>
 </body>
 </html>
