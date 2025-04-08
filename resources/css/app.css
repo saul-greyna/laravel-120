@@ -9,12 +9,49 @@
     text-decoration: none;
 }
 
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(90deg, #000000, #f5af19);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+main {
+    flex: 1;
+    margin-top: 60px; /* ajusta según la altura real de tu header */
+    margin-bottom: 60px; /* espacio para el footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: aqua;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1000;
 }
 
 .container {
@@ -189,4 +226,39 @@ form {
     box-shadow: none;
     background: transparent;
     border: 2px solid #fff;
+}
+
+/* Tablas */
+.tabla-vistas {
+    overflow: auto;
+    width: 100%;
+}
+
+.tabla-vistas table {
+    border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: center;
+}
+
+.tabla-vistas caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.tabla-vistas th {
+    border: 1px solid #dededf;
+    background-color: #d0d7dc;
+    color: #000000;
+    padding: 5px;
+}
+
+.tabla-vistas td {
+    border: 1px solid #dededf;
+    background-color: #dad7d7;
+    color: #000000;
+    padding: 5px;
 }
