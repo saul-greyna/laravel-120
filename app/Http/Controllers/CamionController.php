@@ -11,10 +11,10 @@ class CamionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() 
+    public function index()
     {
-        $camiones = DB::table('camiones')->get();
-        return view('camiones.index', ['camiones' => $camiones]);
+        $camioneros = DB::table('camioneros')->get();
+        return view('camioneros.index', ['camioneros' => $camioneros]);
     }
     /**
      * Show the form for creating a new resource.
