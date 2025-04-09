@@ -13,8 +13,8 @@ class CamionController extends Controller
      */
     public function index()
     {
-        $camioneros = DB::table('camioneros')->get();
-        return view('camioneros.index', ['camioneros' => $camioneros]);
+        $camiones = DB::table('camiones')->get();
+        return view('camiones.index', ['camiones' => $camiones]);
     }
     /**
      * Show the form for creating a new resource.

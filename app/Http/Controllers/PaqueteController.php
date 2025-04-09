@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Paquete;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaqueteController extends Controller
 {
@@ -12,7 +13,8 @@ class PaqueteController extends Controller
      */
     public function index()
     {
-        //
+        $paquetes = DB::table('paquetes')->get();
+        return view('paquetes.index', compact('paquetes'));
     }
 
     /**
@@ -34,9 +36,10 @@ class PaqueteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Paquete $paquete)
+    public function show($id)
     {
-        //
+        $paquete = Paquete::findOrFail($id);
+        return view('paquetes.show', compact('paquete'));
     }
 
     /**

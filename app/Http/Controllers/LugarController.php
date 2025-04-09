@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lugar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LugarController extends Controller
 {
@@ -12,7 +13,8 @@ class LugarController extends Controller
      */
     public function index()
     {
-        //
+        $lugares = DB::table('lugares')->get();
+        return view('lugares.index', ['lugares' => $lugares]);
     }
 
     /**
@@ -34,11 +36,12 @@ class LugarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Lugar $lugar)
+    public function show($id_lugar)
     {
-        //
+        $lugar = Lugar::findOrFail($id_lugar);
+        return view('lugares.show', compact('lugar'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      */

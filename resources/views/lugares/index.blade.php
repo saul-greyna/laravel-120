@@ -1,48 +1,36 @@
 @extends('components.layout')
- 
-@section('title', 'Camioneros')
- 
+
+@section('title', 'Lugares')
+
 @section('content')
 <main>
-    <h2>Lista de Camioneros</h2>
+    <h2>Lista de Lugares</h2>
     <div class="tabla-vistas" role="region" tabindex="0">
         <table>
-            <caption>Table 1</caption>
             <thead>
                 <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
-                    <th>Header 4</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Código Postal</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @forelse ($lugares as $lugar)
+                    <tr>
+                        <td><a href="{{ url('/lugares/' . $lugar->id_lugar) }}">{{ $lugar->id_lugar }}</a></td>
+                        <td>{{ $lugar->nombre }}</td>
+                        <td>{{ $lugar->direccion }}</td>
+                        <td>{{ $lugar->cp }}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="4">No hay lugares registrados aún.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
+        
     </div>
 </main>
 @endsection

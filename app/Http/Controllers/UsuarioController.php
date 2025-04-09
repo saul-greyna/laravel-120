@@ -12,7 +12,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = Usuario::all(); // Consulta a la tabla
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -34,9 +35,10 @@ class UsuarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Usuario $usuario)
+    public function show($id)
     {
-        //
+        $usuario = Usuario::findOrFail($id);
+        return view('usuarios.detalle', compact('usuario'));
     }
 
     /**

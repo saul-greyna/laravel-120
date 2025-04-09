@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Camionero;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CamioneroController extends Controller
 {
@@ -12,7 +13,8 @@ class CamioneroController extends Controller
      */
     public function index()
     {
-        //
+        $camioneros = DB::table('camioneros')->get();
+        return view('camioneros.index', ['camioneros' => $camioneros]);
     }
 
     /**
@@ -34,9 +36,9 @@ class CamioneroController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Camionero $camionero)
+    public function show($id)
     {
-        //
+        
     }
 
     /**

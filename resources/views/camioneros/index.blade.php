@@ -27,6 +27,7 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ url('/camioneros/create') }}" class="btn-agregar">+ Agregar Camionero</a>
     </div>
 </main>
 @endsection
