@@ -28,7 +28,7 @@
                     <td>{{ $camionero->salario }}</td>
                     <td>{{ $camionero->licencia }}</td>
                     <td>
-                        <a href="camioneros/detalle/{{$camionero->id_camionero}}">Detalle</a>
+                        <a href="{{ route('camioneros.show', $camionero->id_camionero) }}">Detalle</a>
                         <a href="{{ url('camioneros/editar', $camionero->id_camionero) }}">Editar</a>
                         <form action="{{ url('camioneros/eliminar', $camionero->id_camionero) }}" method="POST" style="display:inline;">
                             @csrf

@@ -22,7 +22,7 @@
                     <td>{{ $lugar->nombre }}</td>
                     <td>{{ $lugar->direccion }}</td>
                     <td>
-                        <a href="{{ url('lugares/detalle', $lugar->id_lugar) }}">Detalle</a>
+                        <a href="{{ route('lugares.detalle', $lugar->id_lugar) }}">Detalle</a>
                         <a href="{{ url('lugares/editar', $lugar->id_lugar) }}">Editar</a>
                         <form action="{{ url('lugares/eliminar', $lugar->id_lugar) }}" method="POST" style="display:inline;">
                             @csrf

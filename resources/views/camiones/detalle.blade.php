@@ -9,7 +9,7 @@
         <li><strong>ID:</strong> {{ $camion->num_camion }}</li>
         <li><strong>Placas:</strong> {{ $camion->placas }}</li>
         <li><strong>Tipo:</strong> {{ $camion->tipo }}</li>
-        <li><strong>Camionero asignado:</strong> {{ $camion->id_camionero }}</li>
+        <li><strong>Camionero asignado:</strong> {{ $camion->id_camionero ?? 'No asignado' }}</li>
     </ul>
     <a href="{{ url('/camiones') }}">← Volver a la lista</a>
 </main>

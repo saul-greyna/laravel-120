@@ -36,10 +36,10 @@ class LugarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id_lugar)
+    public function show($id)
     {
-        $lugar = Lugar::findOrFail($id_lugar);
-        return view('lugares.show', compact('lugar'));
+        $lugar = Lugar::findOrFail($id);
+        return view('lugares.detalle', compact('lugar'));
     }
     
     /**

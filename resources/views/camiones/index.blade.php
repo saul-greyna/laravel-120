@@ -24,7 +24,7 @@
                     <td>{{ $camion->tipo }}</td>
                     <td>{{ $camion->id_camionero ?? 'Sin asignar' }}</td>
                     <td>
-                        <a href="{{ url('camiones/detalle', $camion->num_camion) }}">Detalle</a>
+                        <a href="{{ route('camiones.detalle', $camion->num_camion) }}">Detalle</a>
                         <a href="{{ url('camiones/editar', $camion->num_camion) }}">Editar</a>
                         <form action="{{ url('camiones/eliminar', $camion->num_camion) }}" method="POST" style="display:inline;">
                             @csrf

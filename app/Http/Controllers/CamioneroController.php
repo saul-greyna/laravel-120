@@ -38,8 +38,10 @@ class CamioneroController extends Controller
      */
     public function show($id)
     {
-        
+        $camionero = Camionero::findOrFail($id);
+        return view('camioneros.detalle', compact('camionero'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
