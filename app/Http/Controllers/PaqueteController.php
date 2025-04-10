@@ -39,7 +39,7 @@ class PaqueteController extends Controller
     public function show($id)
     {
         $paquete = Paquete::findOrFail($id);
-        return view('paquetes.show', compact('paquete'));
+        return view('paquetes.detalle', compact('paquete'));
     }
 
     /**

@@ -31,9 +31,10 @@ Route::get('/lugares/detalle/{id}', [App\Http\Controllers\LugarController::class
 use App\Http\Controllers\PaqueteController;
 
 Route::get('/paquetes', [PaqueteController::class, 'index']);
-Route::get('/paquetes/{id}', [PaqueteController::class, 'show']);
+Route::get('/paquetes/detalle/{id}', [App\Http\Controllers\PaqueteController::class, 'show'])->name('paquetes.detalle');
 
 /* Usuarios */
 use App\Http\Controllers\UsuarioController;
 
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+Route::get('/usuarios/detalle/{id}', [App\Http\Controllers\UsuarioController::class, 'show'])->name('usuarios.detalle');
