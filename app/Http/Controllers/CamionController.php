@@ -38,7 +38,7 @@ class CamionController extends Controller
     public function show($id)
     {
         $camion = DB::table('camiones')->where('id', $id)->first();
-        return view('camiones.show', ['camion' => $camion]);
+        return view('camiones.show', compact('camion'));
     }
 
     /**

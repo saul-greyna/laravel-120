@@ -3,12 +3,12 @@
 @section('content')
 <main class="container">
     <section class="form-box login">
-        <form action="" method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" id="username" placeholder="Username" required>
+                <input type="text" name="email" id="username" placeholder="Username" required>
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -17,7 +17,7 @@
                 <i class="bx bxs-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

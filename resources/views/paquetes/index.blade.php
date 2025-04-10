@@ -1,35 +1,43 @@
 @extends('components.layout')
- 
-@section('title', 'Camioneros')
- 
-@section('content')
-<h1>Lista de Paquetes</h1>
-<div class="tabla-vistas" role="region" tabindex="0">
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Remitente</th>
-                <th>Descripción</th>
-                <th>Camionero</th>
-                <th>Destino</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($paquetes as $paquete)
-                <tr>
-                    <td><a href="{{ url('/paquetes/' . $paquete->id_paq) }}">{{ $paquete->id_paq }}</a></td>
-                    <td>{{ $paquete->remitente }}</td>
-                    <td>{{ $paquete->descripcion }}</td>
-                    <td>{{ $paquete->id_camionero ?? 'N/A' }}</td>
-                    <td>{{ $paquete->id_lugar_destino ?? 'N/A' }}</td>
-                </tr>
-            @empty
-                <tr><td colspan="5">No hay paquetes registrados.</td></tr>
-            @endforelse
-        </tbody>
-    </table>
-</div>
-@endsection
 
- 
+@section('title', 'Paquetes')
+
+@section('content')
+<main>
+    <h2>Lista de Paquetes</h2>
+    <div class="tabla-vistas">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Remitente</th>
+                    <th>Camionero</th>
+                    <th>Lugar Destino</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($paquetes as $paquete)
+                <tr>
+                    <td>{{ $paquete->id_paq }}</td>
+                    <td>{{ $paquete->descripcion }}</td>
+                    <td>{{ $paquete->remitente }}</td>
+                    <td>{{ $paquete->camionero->nombre ?? 'No asignado' }}</td>
+                    <td>{{ $paquete->lugarDestino->nombre ?? 'No asignado' }}</td>
+                    <td>
+                        <a href="{{ url('paquetes/detalle', $paquete->id_paq) }}">Detalle</a>
+                        <a href="{{ url('paquetes/editar', $paquete->id_paq) }}">Editar</a>
+                        <form action="{{ url('paquetes/eliminar', $paquete->id_paq) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</main>
+@endsection

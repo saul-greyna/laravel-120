@@ -5,32 +5,35 @@
 @section('content')
 <main>
     <h2>Lista de Lugares</h2>
-    <div class="tabla-vistas" role="region" tabindex="0">
+    <div class="tabla-vistas">
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Dirección</th>
-                    <th>Código Postal</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($lugares as $lugar)
-                    <tr>
-                        <td><a href="{{ url('/lugares/' . $lugar->id_lugar) }}">{{ $lugar->id_lugar }}</a></td>
-                        <td>{{ $lugar->nombre }}</td>
-                        <td>{{ $lugar->direccion }}</td>
-                        <td>{{ $lugar->cp }}</td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="4">No hay lugares registrados aún.</td>
-                    </tr>
-                @endforelse
+                @foreach ($lugares as $lugar)
+                <tr>
+                    <td>{{ $lugar->id_lugar }}</td>
+                    <td>{{ $lugar->nombre }}</td>
+                    <td>{{ $lugar->direccion }}</td>
+                    <td>
+                        <a href="{{ url('lugares/detalle', $lugar->id_lugar) }}">Detalle</a>
+                        <a href="{{ url('lugares/editar', $lugar->id_lugar) }}">Editar</a>
+                        <form action="{{ url('lugares/eliminar', $lugar->id_lugar) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
         </table>
-        
     </div>
 </main>
 @endsection
