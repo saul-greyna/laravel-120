@@ -46,17 +46,30 @@ class CamioneroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Camionero $camionero)
+    public function edit($id)
     {
-        //
+        $camionero = Camionero::findOrFail($id);
+        return view('camioneros.editar', compact('camionero'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Camionero $camionero)
+    public function update(Request $request, $id)
     {
-        //
+        $camionero = Camionero::findOrFail($id);
+    
+        $camionero->nombre = $request->nombre;
+        $camionero->apellidos = $request->apellidos;
+        $camionero->direccion = $request->direccion;
+        $camionero->salario = $request->salario;
+        $camionero->licencia = $request->licencia;
+        $camionero->save();
+    
+        $mensaje = "Camionero actualizado con éxito. ID: " . $camionero->id_camionero;
+        $camioneros = DB::table('camioneros')->get();
+    
+        return view('camioneros.index', compact('camioneros', 'mensaje'));
     }
 
     /**

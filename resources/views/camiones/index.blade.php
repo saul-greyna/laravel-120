@@ -25,7 +25,7 @@
                     <td>{{ $camion->id_camionero ?? 'Sin asignar' }}</td>
                     <td>
                         <a href="{{ route('camiones.detalle', $camion->num_camion) }}">Detalle</a>
-                        <a href="{{ url('camiones/editar', $camion->num_camion) }}">Editar</a>
+                        <a href="/camiones/editar/{{ $camion->num_camion }}">Editar</a>
                         <a href="/camiones/eliminar/{{ $camion->num_camion }}">Eliminar</a>
                     </td>
                 </tr>

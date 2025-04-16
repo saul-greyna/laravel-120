@@ -25,7 +25,7 @@
                     <td>{{ $usuario->perfil }}</td>
                     <td>
                         <a href="{{ url('usuarios/detalle', $usuario->id) }}">Detalle</a>
-                        <a href="{{ url('usuarios/editar', $usuario->id) }}">Editar</a>
+                        <a href="/usuarios/editar/{{ $usuario->id }}">Editar</a>
                         <a href="/usuarios/eliminar/{{ $usuario->id }}">Eliminar</a>
                     </td>
                 </tr>

@@ -25,7 +25,7 @@
                     <td>{{ $lugar->cp  }}</td>
                     <td>
                         <a href="{{ route('lugares.detalle', $lugar->id_lugar) }}">Detalle</a>
-                        <a href="{{ url('lugares/editar', $lugar->id_lugar) }}">Editar</a>
+                        <a href="/lugares/editar/{{ $lugar->id_lugar }}">Editar</a>
                         <a href="/lugares/eliminar/{{ $lugar->id_lugar }}">Eliminar</a>
                     </td>
                 </tr>

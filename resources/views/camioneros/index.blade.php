@@ -29,7 +29,7 @@
                     <td>{{ $camionero->licencia }}</td>
                     <td>
                         <a href="{{ route('camioneros.show', $camionero->id_camionero) }}">Detalle</a>
-                        <a href="{{ url('camioneros/editar', $camionero->id_camionero) }}">Editar</a>
+                        <a href="/camioneros/editar/{{ $camionero->id_camionero }}">Editar</a>
                         <a href="/camioneros/eliminar/{{ $camionero->id_camionero }}">Eliminar</a>
                     </td>
                 </tr>

@@ -27,7 +27,7 @@
                     <td>{{ $paquete->lugarDestino->nombre ?? 'No asignado' }}</td>
                     <td>
                         <a href="{{ url('paquetes/detalle', $paquete->id_paq) }}">Detalle</a>
-                        <a href="{{ url('paquetes/editar', $paquete->id_paq) }}">Editar</a>
+                        <a href="/paquetes/editar/{{ $paquete->id_paq }}">Editar</a>
                         <a href="/paquetes/eliminar/{{ $paquete->id_paq }}">Eliminar</a>
                     </td>
                 </tr>

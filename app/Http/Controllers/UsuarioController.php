@@ -45,17 +45,29 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Usuario $usuario)
+    public function edit($id)
     {
-        //
+        $usuario = Usuario::findOrFail($id);
+        return view('usuarios.editar', compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, $id)
     {
-        //
+        $usuario = Usuario::findOrFail($id);
+    
+        $usuario->nombre = $request->nombre;
+        $usuario->correo = $request->correo;
+        $usuario->perfil = $request->perfil;
+        $usuario->foto = $request->foto; // si usas texto, si es archivo es distinto
+        $usuario->save();
+    
+        $mensaje = "Usuario actualizado con éxito. ID: " . $usuario->id;
+        $usuarios = DB::table('usuarios')->get();
+    
+        return view('usuarios.index', compact('usuarios', 'mensaje'));
     }
 
     /**

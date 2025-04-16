@@ -45,17 +45,30 @@ class PaqueteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Paquete $paquete)
+    public function edit($id)
     {
-        //
+        $paquete = Paquete::findOrFail($id);
+        return view('paquetes.editar', compact('paquete'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Paquete $paquete)
+    public function update(Request $request, $id)
     {
-        //
+        $paquete = Paquete::findOrFail($id);
+    
+        $paquete->descripcion = $request->descripcion;
+        $paquete->remitente = $request->remitente;
+        $paquete->id_camionero = $request->id_camionero;
+        $paquete->id_lugar_destino = $request->id_lugar_destino;
+        $paquete->save();
+    
+        $mensaje = "Paquete actualizado con éxito. ID: " . $paquete->id_paq;
+        $paquetes = DB::table('paquetes')->get();
+    
+        return view('paquetes.index', compact('paquetes', 'mensaje'));
     }
 
     /**

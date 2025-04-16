@@ -44,17 +44,28 @@ class CamionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Camion $camion)
+    public function edit($id)
     {
-        //
+        $camion = Camion::findOrFail($id);
+        return view('camiones.editar', compact('camion'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Camion $camion)
+    public function update(Request $request, $id)
     {
-        //
+        $camion = Camion::findOrFail($id);
+    
+        $camion->placas = $request->placas;
+        $camion->tipo = $request->tipo;
+        $camion->id_camionero = $request->id_camionero;
+        $camion->save();
+    
+        $mensaje = "Camión actualizado con éxito. ID: " . $camion->num_camion;
+        $camiones = DB::table('camiones')->get();
+    
+        return view('camiones.index', compact('camiones', 'mensaje'));
     }
 
     /**

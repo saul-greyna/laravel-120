@@ -45,18 +45,31 @@ class LugarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Lugar $lugar)
+    public function edit($id)
     {
-        //
+        $lugar = Lugar::findOrFail($id);
+        return view('lugares.editar', compact('lugar'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Lugar $lugar)
+    public function update(Request $request, $id)
     {
-        //
+        $lugar = Lugar::findOrFail($id);
+    
+        $lugar->nombre = $request->nombre;
+        $lugar->direccion = $request->direccion;
+        $lugar->cp = $request->cp;
+        $lugar->save();
+    
+        $mensaje = "Lugar actualizado con éxito. ID: " . $lugar->id_lugar;
+        $lugares = DB::table('lugares')->get();
+    
+        return view('lugares.index', compact('lugares', 'mensaje'));
     }
+
 
     /**
      * Remove the specified resource from storage.
