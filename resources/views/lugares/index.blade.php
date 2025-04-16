@@ -12,6 +12,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Dirección</th>
+                    <th>Código Postal</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -21,6 +22,7 @@
                     <td>{{ $lugar->id_lugar }}</td>
                     <td>{{ $lugar->nombre }}</td>
                     <td>{{ $lugar->direccion }}</td>
+                    <td>{{ $lugar->cp  }}</td>
                     <td>
                         <a href="{{ route('lugares.detalle', $lugar->id_lugar) }}">Detalle</a>
                         <a href="{{ url('lugares/editar', $lugar->id_lugar) }}">Editar</a>

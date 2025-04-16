@@ -6,11 +6,10 @@
 <main>
     <h2>Detalle del paquete</h2>
     <ul>
-        <li><strong>ID:</strong> {{ $usuario->id_paq }}</li>
-        <li><strong>Descripcion:</strong> {{ $usuario->descripcion }}</li>
-        <li><strong>Remitente:</strong> {{ $usuario->remitente }}</li>
-        <li><strong>Id Camionero:</strong> {{ $usuario->id_camionero }}</li>
-        <li><strong>Id Lugar destino:</strong> {{ $usuario->id_lugar_destino }}</li>
+        <li><strong>ID:</strong> {{ $usuario->id }}</li>
+        <li><strong>Nombre</strong> {{ $usuario->nombre }}</li>
+        <li><strong>Correo</strong> {{ $usuario->correo }}</li>
+        <li><strong>Perfil</strong> {{ $usuario->perfil }}</li>
     </ul>
     <a href="{{ url('/usuarios') }}">← Volver a la lista</a>
 </main>
