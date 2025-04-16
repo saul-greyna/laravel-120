@@ -61,8 +61,13 @@ class LugarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Lugar $lugar)
+    public function destroy($id)
     {
-        //
+        DB::table('lugares')->where('id_lugar', $id)->delete();
+    
+        $lugares = DB::table('lugares')->get();
+        $mensaje = "Lugar eliminado con éxito";
+    
+        return view('lugares.index', compact('lugares', 'mensaje'));
     }
 }

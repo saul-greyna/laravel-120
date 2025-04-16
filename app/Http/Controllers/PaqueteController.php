@@ -61,8 +61,13 @@ class PaqueteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Paquete $paquete)
+    public function destroy($id)
     {
-        //
+        DB::table('paquetes')->where('id_paq', $id)->delete();
+    
+        $paquetes = DB::table('paquetes')->get();
+        $mensaje = "Paquete eliminado con éxito";
+    
+        return view('paquetes.index', compact('paquetes', 'mensaje'));
     }
 }

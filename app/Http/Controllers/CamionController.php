@@ -60,8 +60,13 @@ class CamionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Camion $camion)
+    public function destroy($id)
     {
-        //
+        DB::table('camiones')->where('num_camion', $id)->delete();
+    
+        $camiones = DB::table('camiones')->get();
+        $mensaje = "Camión eliminado con éxito";
+    
+        return view('camiones.index', compact('camiones', 'mensaje'));
     }
 }

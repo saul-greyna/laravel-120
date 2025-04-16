@@ -26,11 +26,7 @@
                     <td>
                         <a href="{{ route('camiones.detalle', $camion->num_camion) }}">Detalle</a>
                         <a href="{{ url('camiones/editar', $camion->num_camion) }}">Editar</a>
-                        <form action="{{ url('camiones/eliminar', $camion->num_camion) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Eliminar</button>
-                        </form>
+                        <a href="/camiones/eliminar/{{ $camion->num_camion }}">Eliminar</a>
                     </td>
                 </tr>
                 @endforeach

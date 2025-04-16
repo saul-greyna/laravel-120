@@ -62,8 +62,11 @@ class CamioneroController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Camionero $camionero)
+    public function destroy($id)
     {
-        //
+        DB::table('camioneros')->where('id_camionero', $id)->delete();
+        $mensaje = "Camionero eliminado con éxito";
+        $camioneros = DB::table('camioneros')->get();
+        return view('camioneros.index', ['camioneros' => $camioneros, 'mensaje' => $mensaje]);
     }
 }

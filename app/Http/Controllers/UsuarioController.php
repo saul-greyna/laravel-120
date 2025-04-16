@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
@@ -60,8 +61,13 @@ class UsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Usuario $usuario)
+    public function destroy($id)
     {
-        //
+        DB::table('usuarios')->where('id', $id)->delete();
+    
+        $usuarios = DB::table('usuarios')->get();
+        $mensaje = "Usuario eliminado con éxito";
+    
+        return view('usuarios.index', compact('usuarios', 'mensaje'));
     }
 }

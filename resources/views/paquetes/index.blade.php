@@ -28,11 +28,7 @@
                     <td>
                         <a href="{{ url('paquetes/detalle', $paquete->id_paq) }}">Detalle</a>
                         <a href="{{ url('paquetes/editar', $paquete->id_paq) }}">Editar</a>
-                        <form action="{{ url('paquetes/eliminar', $paquete->id_paq) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Eliminar</button>
-                        </form>
+                        <a href="/paquetes/eliminar/{{ $paquete->id_paq }}">Eliminar</a>
                     </td>
                 </tr>
                 @endforeach
