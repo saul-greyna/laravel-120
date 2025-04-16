@@ -4,13 +4,37 @@
 
 @section('content')
 <main>
-    <h2>Detalle del Lugar</h2>
-    <ul>
-        <li><strong>ID:</strong> {{ $lugar->id_lugar }}</li>
-        <li><strong>Nombre:</strong> {{ $lugar->nombre }}</li>
-        <li><strong>Dirección:</strong> {{ $lugar->direccion }}</li>
-        <li><strong>Código Postal:</strong> {{ $lugar->cp }}</li>
-    </ul>
-    <a href="{{ url('/lugares') }}">← Volver a la lista</a>
+    <div class="tabla-detalle">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Detalle del Lugar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ID:</strong></td>
+                    <td>{{ $lugar->id_lugar }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Nombre:</strong></td>
+                    <td>{{ $lugar->nombre }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Dirección:</strong></td>
+                    <td>{{ $lugar->direccion }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Código Postal:</strong></td>
+                    <td>{{ $lugar->cp }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong><a href="{{ url('/camiones') }}">Volver a la lista</a></strong>
+                    </td>
+                </tr>                                
+            </tbody>
+        </table>        
+    </div>
 </main>
 @endsection

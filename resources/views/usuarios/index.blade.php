@@ -35,6 +35,13 @@
                 </tr>
                 @endforeach
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <a href="{{ url('/') }}">Volver al inicio</a>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </main>
