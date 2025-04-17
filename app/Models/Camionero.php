@@ -10,8 +10,6 @@ class Camionero extends Model
     protected $primaryKey = 'id_camionero';
     public $timestamps = true;
 
-    protected $fillable = [
-        'nombre', 'apellidos', 'direccion', 'salario', 'licencia'
-    ];
+    protected $fillable = ['nombre', 'apellidos', 'direccion', 'salario', 'licencia'];
 }
 

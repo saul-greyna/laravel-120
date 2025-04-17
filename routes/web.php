@@ -16,6 +16,8 @@ Route::get('/camioneros/detalle/{id}', [App\Http\Controllers\CamioneroController
 Route::get('/camioneros/eliminar/{id}', [App\Http\Controllers\CamioneroController::class, 'destroy']);
 Route::get('/camioneros/editar/{id}', [App\Http\Controllers\CamioneroController::class, 'edit']);
 Route::post('/camioneros/update/{id}', [App\Http\Controllers\CamioneroController::class, 'update']);
+Route::get('/camioneros/crear', [App\Http\Controllers\CamioneroController::class, 'create']);
+Route::post('/camioneros/save', [App\Http\Controllers\CamioneroController::class, 'store']);
 
 /* Camiones */
 Route::get('/camiones', [App\Http\Controllers\CamionController::class, 'index']);

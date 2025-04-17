@@ -39,6 +39,7 @@
                 <tr>
                     <td colspan="7">
                         <a href="{{ url('/') }}">Volver al inicio</a>
+                        <a href="/camioneros/crear" class="btn">Nuevo Camionero</a>
                     </td>
                 </tr>
             </tfoot>
