@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paquete;
+use App\Models\Camionero;
+use App\Models\Lugar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,15 +24,22 @@ class PaqueteController extends Controller
      */
     public function create()
     {
-        //
+        $camioneros = Camionero::all();
+        $lugares = Lugar::all();
+        return view('paquetes.insertar', compact('camioneros', 'lugares'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $paquete = Paquete::create($request->all());
+    
+        $mensaje = "Paquete registrado con éxito.";
+        $paquetes = DB::table('paquetes')->get();
+    
+        return view('paquetes.index', compact('paquetes', 'mensaje'));
     }
 
     /**

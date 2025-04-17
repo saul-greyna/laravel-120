@@ -22,17 +22,14 @@ class CamioneroController extends Controller
      */
     public function create()
     {
-        return view('camioneros.insertar');
+        return view('camioneros.insertar'); // Aquí va el modal con el formulario
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-        $camionero = Camionero::create($request->all());
+        Camionero::create($request->all());
     
-        $mensaje = "Camionero registrado con éxito. ID: " . $camionero->id_camionero;
+        $mensaje = "Camionero registrado con éxito.";
         $camioneros = DB::table('camioneros')->get();
     
         return view('camioneros.index', compact('camioneros', 'mensaje'));

@@ -35,6 +35,7 @@
                 <tr>
                     <td colspan="5">
                         <a href="{{ url('/') }}">Volver al inicio</a>
+                        <a href="/usuarios/crear" class="btn">Nuevo Usuario</a>
                     </td>
                 </tr>
             </tfoot>

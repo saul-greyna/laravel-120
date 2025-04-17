@@ -22,7 +22,7 @@ class LugarController extends Controller
      */
     public function create()
     {
-        //
+        return view('lugares.insertar');
     }
 
     /**
@@ -30,7 +30,12 @@ class LugarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lugar = Lugar::create($request->all());
+    
+        $mensaje = "Lugar registrado con éxito.";
+        $lugares = DB::table('lugares')->get();
+    
+        return view('lugares.index', compact('lugares', 'mensaje'));
     }
 
     /**

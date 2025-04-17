@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Camion;
+use App\Models\Camionero;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,8 @@ class CamionController extends Controller
      */
     public function create()
     {
-        //
+        $camioneros = Camionero::all();
+        return view('camiones.insertar', compact('camioneros'));
     }
 
     /**
@@ -29,7 +31,12 @@ class CamionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $camiones =Camion::create($request->all());
+    
+        $mensaje = "Camión registrado con éxito.";
+        $camiones = DB::table('camiones')->get();
+    
+        return view('camiones.index', compact('camiones', 'mensaje'));
     }
 
     /**

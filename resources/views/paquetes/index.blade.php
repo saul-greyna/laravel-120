@@ -37,6 +37,7 @@
                 <tr>
                     <td colspan="6">
                         <a href="{{ url('/') }}">Volver al inicio</a>
+                        <a href="/paquetes/crear" class="btn">Nuevo Paquete</a>                        
                     </td>
                 </tr>
             </tfoot>

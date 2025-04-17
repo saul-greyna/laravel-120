@@ -7,13 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Paquete extends Model
 {
     protected $primaryKey = 'id_paq';
-
-    protected $fillable = [
-        'descripcion',
-        'remitente',
-        'id_camionero',
-        'id_lugar_destino',
-    ];
+    protected $fillable = ['descripcion', 'remitente', 'id_camionero', 'id_lugar_destino'];
 
     // Relaciones
     public function camionero()

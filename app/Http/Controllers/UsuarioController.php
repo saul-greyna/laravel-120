@@ -22,7 +22,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('usuarios.insertar');
     }
 
     /**
@@ -30,7 +30,12 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario =Usuario::create($request->all());
+    
+        $mensaje = "Usuario registrado con éxito.";
+        $usuarios = DB::table('usuarios')->get();
+    
+        return view('usuarios.index', compact('usuarios', 'mensaje'));
     }
 
     /**
