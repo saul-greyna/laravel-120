@@ -24,7 +24,7 @@
                             {{ Auth::user()->name }}
                             <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                 @csrf
-                                <button type="submit">Cerrar sesión</button>
+                                <button class="boton-elegante" type="submit">Cerrar sesión</button>
                             </form>
                         </li>
                     </ul>
