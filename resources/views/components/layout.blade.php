@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <section class="contenerdor-principal">
+    <div class="contenerdor-principal">
         <header class="mi-header">
-            <h1>Paquetería</h1>
+            <h1>PaquetExpress</h1>
             <nav>
                 @auth
                     <ul>
@@ -31,9 +31,9 @@
                 @endauth
             </nav>
             <nav>
-                @guest
-                <button><a href="{{ route('login') }}">Iniciar sesión</a></button>
-                <button><a href="{{ route('register') }}">Registrarse</a></button>
+                @guest  
+                <a class="boton-elegante" href="{{ route('login') }}">Iniciar sesión</a>
+                <a class="boton-elegante" href="{{ route('register') }}">Registrarse</a>
                 @endguest
             </nav>
         </header>
@@ -43,7 +43,7 @@
         <footer>
             <p>© 2025 Saul Reyna</p>
         </footer>
-    </section>
+    </div>
 </body>
 </html>
 

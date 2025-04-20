@@ -57,7 +57,7 @@
         <div class="toggle-panel toggle-right">
             <h1>Welcome back!</h1>
             <p>Already have an account?</p>
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a class="btn-auth" href="{{ route('login') }}">{{ __('Login') }}</a>
         </div>
     </section>
 </main>
