@@ -23,6 +23,27 @@
     background-color: #f5af19;
 }  
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 1000px;
+    height: 100%;
+    background-color: #f5af19;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    margin: 0 300px;
+    padding: 20px;
+}
+
+a {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -263,7 +284,7 @@ form {
 #home {
     display: flex;
     flex-direction: column;
-    height: 80vh; 
+    height: 85.5vh; 
     width: 100%;    
     align-items: center;    
     justify-content: center;
@@ -285,6 +306,9 @@ form {
 
 .div1 { 
     background: #f88; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .div2 { 
     background: #faa; 
@@ -294,9 +318,15 @@ form {
 }
 .div4 { 
     background: #afa; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .div5 { 
     background: #88f; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .div6 { 
     background: #aaf; 
@@ -306,9 +336,15 @@ form {
 }
 .div8 { 
     background: #ffa; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .div9 { 
-    background: #8ff; 
+    background: #8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 .div10 { 
     background: #aff; 
@@ -318,6 +354,27 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-align: start;
+    margin: 30px;
+}
+
+.desripcion-izq {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: start;
+    margin: 15px  15px 0;
+}
+
+.parrafo-izq {
+    font-size: 1rem;
+    color: #fff;
+    text-align: start;
+    margin: 10px 15px;
 }
 
 

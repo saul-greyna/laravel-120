@@ -13,7 +13,7 @@
             <h1>PaquetExpress</h1>
             <nav>
                 @auth
-                    <ul>
+                    <ul class="menu">
                         <li><a href="{{ url('/') }}">Inicio</a></li>
                         <li><a href="{{ url('/camioneros') }}">Camioneros</a></li>
                         <li><a href="{{ url('/camiones') }}">Camiones</a></li>

@@ -10,13 +10,13 @@
     <section class="parent">
         <div class="div1">
             <h2>🚛 Camiones</h2>
-            <h5>
+            <h5 class="desripcion-izq">
                 <strong>
                     Nuestra flota lista para moverse.
                 </strong>
             </h5>
-            <p>Camiones modernos y equipados con GPS para garantizar la entrega de tus paquetes sin retrasos.</p>
-            <p>📌 Estado en tiempo real, asignación automática de rutas y eficiencia operativa garantizada.</p>
+            <p class="parrafo-izq">Camiones modernos y equipados con GPS para garantizar la entrega de tus paquetes sin retrasos.</p>
+            <p class="parrafo-izq">📌 Estado en tiempo real, asignación automática de rutas y eficiencia operativa garantizada.</p>
         </div>
         <div class="div2">
             <img src="https://www.gureakdatapost.com/wp-content/uploads/2024/07/iStock-1281884522.jpg" alt="">
@@ -36,13 +36,13 @@
         </div>
         <div class="div5"> 
             <h2>👨‍✈️ Camioneros</h2>
-            <h5>
+            <h5 class="desripcion-izq">
                 <strong>
                     Expertos al volante.
                 </strong>
             </h5>
-            <p>Cada entrega está en manos de conductores certificados, capacitados y monitoreados en cada kilómetro.</p>
-            <p>🛡️ Confianza, seguridad y compromiso.</p>            
+            <p class="parrafo-izq">Cada entrega está en manos de conductores certificados, capacitados y monitoreados en cada kilómetro.</p>
+            <p class="parrafo-izq">🛡️ Confianza, seguridad y compromiso.</p>            
         </div>
         <div class="div6"> 
             <img src="https://thelogisticsworld.com/wp-content/uploads/2022/09/Repartidor-de-tiro-medio-hablando-por-telefono.jpg" alt="">
@@ -62,13 +62,13 @@
         </div>
         <div class="div9"> 
             <h2>🧑‍💼 Clientes</h2>
-            <h5>
+            <h5 class="desripcion-izq">
                 <strong>
                     Tus clientes, nuestra prioridad.
                 </strong>
             </h5>
-            <p>Administra fácilmente los datos de quienes confían en ti. Historial, frecuencia de envíos y atención personalizada.</p>
-            <p>📊 Panel inteligente de clientes frecuentes.</p>
+            <p class="parrafo-izq">Administra fácilmente los datos de quienes confían en ti. Historial, frecuencia de envíos y atención personalizada.</p>
+            <p class="parrafo-izq">📊 Panel inteligente de clientes frecuentes.</p>
         </div>
         <div class="div10"> 
             <img src="https://a.storyblok.com/f/63950/801x370/88c9aa3a6c/mobile-2.png" alt="">
