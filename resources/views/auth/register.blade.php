@@ -6,9 +6,9 @@
         <form action="" method="POST" action="{{ route('register') }}">
             @csrf
 
-            <h1>Registration</h1>
+            <h1>Registro</h1>
             <div class="input-box">
-                <input id="name" type="text" placeholder="Name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input id="name" type="text" placeholder="Nombre" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -18,7 +18,7 @@
                 <i class="bx bxs-user"></i>
             </div>
             <div class="input-box">
-                <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input id="email" type="email" placeholder="Correo electrónico" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                 <i class='bx bxs-envelope'></i>
             </div>
             <div class="input-box">
-                <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                <input id="password" type="password" placeholder="Contraseña" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -38,13 +38,13 @@
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input id="password-confirm" type="password" placeholder="Confirm Password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <input id="password-confirm" type="password" placeholder="Confirmar contraseña" class="form-control" name="password_confirmation" required autocomplete="new-password">
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <button type="submit" class="btn btn-primary">
-                {{ __('Register') }}
+                {{ __('Registrar') }}
             </button>
-            <p>or login with social platform</p>
+            <p>o inicie sesión con la plataforma social</p>
             <div class="social-icons">
                 <a href="#"><i class="bx bxl-google"></i></a>
                 <a href="#"><i class="bx bxl-facebook"></i></a>
@@ -55,9 +55,9 @@
     </section>
     <section class="toggle-box">
         <div class="toggle-panel toggle-right">
-            <h1>Welcome back!</h1>
-            <p>Already have an account?</p>
-            <a class="btn-auth" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <h1>¡Bienvenido de nuevo!</h1>
+            <p>¿Ya tienes una cuenta?</p>
+            <a class="btn-auth" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
         </div>
     </section>
 </main>

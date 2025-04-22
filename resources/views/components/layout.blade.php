@@ -10,16 +10,17 @@
 <body>
     <div class="contenerdor-principal">
         <header class="mi-header">
-            <h1>PaquetExpress</h1>
+            <a id="titulo" href="{{ url('/') }}">PaquetExpress</a>
             <nav>
                 @auth
                     <ul class="menu">
-                        <li><a href="{{ url('/') }}">Inicio</a></li>
+                        <li></li>
                         <li><a href="{{ url('/camioneros') }}">Camioneros</a></li>
                         <li><a href="{{ url('/camiones') }}">Camiones</a></li>
                         <li><a href="{{ url('/lugares') }}">Lugares</a></li>
                         <li><a href="{{ url('/paquetes') }}">Paquetes</a></li>
                         <li><a href="{{ url('/usuarios') }}">Usuarios</a></li>
+                        <li><a href="{{ url('/consultas') }}">Consultas</a></li>
                         <li>
                             {{ Auth::user()->name }}
                             <form action="{{ route('logout') }}" method="POST" style="display: inline;">

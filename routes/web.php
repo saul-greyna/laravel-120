@@ -54,3 +54,9 @@ Route::get('/usuarios/editar/{id}', [App\Http\Controllers\UsuarioController::cla
 Route::post('/usuarios/update/{id}', [App\Http\Controllers\UsuarioController::class, 'update']);
 Route::get('/usuarios/crear', [App\Http\Controllers\UsuarioController::class, 'create']);
 Route::post('/usuarios/save', [App\Http\Controllers\UsuarioController::class, 'store']);
+
+/* Consultas */
+use App\Http\Controllers\ConsultaController;
+
+Route::get('/consultas', [ConsultaController::class, 'index']);
+ 
