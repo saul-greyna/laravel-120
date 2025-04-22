@@ -6,7 +6,7 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <h1>Login</h1>
+            <h1>Iniciar sesión</h1>
             <div class="input-box">
                 <input type="text" name="email" id="username" placeholder="Username" required>
                 @error('email')
@@ -29,18 +29,18 @@
                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                 <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
+                    {{ __('Acuérdate de mí') }}
                 </label>
             </div>
             <button type="submit" class="btn">
-                {{ __('Login') }}
+                {{ __('Acceso') }}
             </button>
             @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
+                    {{ __('¿Olvidaste tu contraseña?') }}
                 </a>
             @endif
-            <p>or login with social platform</p>
+            <p>o inicie sesión con la plataforma social</p>
             <div class="social-icons">
                 <a href="#"><i class="bx bxl-google"></i></a>
                 <a href="#"><i class="bx bxl-facebook"></i></a>
@@ -51,9 +51,9 @@
     </section>
     <section class="toggle-box">
         <div class="toggle-panel toggle-left">
-            <h1> Hello, Welcome!</h1>
-            <p>Don't have an account?</p>
-            <a class="btn-auth" href="{{ route('register') }}">{{ __('Register') }}</a>
+            <h1>Hola, ¡Bienvenido!</h1>
+            <p>No tienes una cuenta?</p>
+            <a class="btn-auth" href="{{ route('register') }}">{{ __('Registro') }}</a>
        </div>
     </section>
 </main>
