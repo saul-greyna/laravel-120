@@ -8,7 +8,7 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan="2">Detalles del Camionero</th>
+                    <td colspan="2">Detalles del Camionero</td>
                 </tr>
             </thead>
             <tbody>

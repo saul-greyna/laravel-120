@@ -3,13 +3,13 @@
 @section('content')
 <main>
     <div id="home">
-        <h1>Paquetería Ágil</h1>
+        <h1 id="titulo">Paquetería Ágil</h1>
         <p>Envíos seguros, rápidos y confiables.</p>
         <h4>Llega a tiempo, llega con nosotros.</h4>
     </div>
     <section class="parent">
         <div class="div1">
-            <h2>🚛 Camiones</h2>
+            <h2 class="titulo-izq">🚛 Camiones</h2>
             <h5 class="desripcion-izq">
                 <strong>
                     Nuestra flota lista para moverse.
@@ -25,17 +25,17 @@
             <img src="https://www.tour-sa.com/wp-content/uploads/2021/08/servicio-de-paqueteri%CC%81a-barcelona.jpg" alt="">
         </div>
         <div class="div4">
-            <h2>📦 Paquetes</h2>
-            <h5>
+            <h2 class="titulo-der">📦 Paquetes</h2>
+            <h5 class="desripcion-der">
                 <strong>
                     Envíos seguros y confiables.
                 </strong>
             </h5>
-            <p>Paquetes asegurados y protegidos para que lleguen en perfectas condiciones.</p>
-            <p>📌 Seguimiento en tiempo real y atención al cliente 24/7.</p>
+            <p class="parrafo-der">Paquetes asegurados y protegidos para que lleguen en perfectas condiciones.</p>
+            <p class="parrafo-der">📌 Seguimiento en tiempo real y atención al cliente 24/7.</p>
         </div>
         <div class="div5"> 
-            <h2>👨‍✈️ Camioneros</h2>
+            <h2 class="titulo-izq">👨‍✈️ Camioneros</h2>
             <h5 class="desripcion-izq">
                 <strong>
                     Expertos al volante.
@@ -51,17 +51,17 @@
             <img src="https://www.occ.com.mx/blog/wp-content/uploads/2021/01/Empresas-de-paqueteria-port-1920x1152-1.jpg" alt="">
         </div>
         <div class="div8"> 
-            <h2>📦 Envíos</h2>
-            <h5>
+            <h2 class="titulo-der">📦 Envíos</h2>
+            <h5 class="desripcion-der">
                 <strong>
                     Gestión ágil y transparente.
                 </strong>
             </h5>
-            <p>Monitorea el estado de tus envíos en tiempo real. Desde el registro hasta la entrega final.</p>
-            <p>📬 Actualizaciones automáticas, historial completo y confirmación de recepción.</p>
+            <p class="parrafo-der">Monitorea el estado de tus envíos en tiempo real. Desde el registro hasta la entrega final.</p>
+            <p class="parrafo-der">📬 Actualizaciones automáticas, historial completo y confirmación de recepción.</p>
         </div>
         <div class="div9"> 
-            <h2>🧑‍💼 Clientes</h2>
+            <h2 class="titulo-izq">🧑‍💼 Clientes</h2>
             <h5 class="desripcion-izq">
                 <strong>
                     Tus clientes, nuestra prioridad.

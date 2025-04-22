@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="contenerdor-principal">
-        <header class="mi-header">
+        <header class="encabezado">
             <a id="titulo" href="{{ url('/') }}">PaquetExpress</a>
             <nav>
                 @auth

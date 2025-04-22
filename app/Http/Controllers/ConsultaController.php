@@ -19,16 +19,16 @@ class ConsultaController extends Controller
             ->select(DB::raw("CONCAT(nombre, ' ', apellidos) AS NombreCompleto"))
             ->get();
 
-        // 4. Camiones ordenados por tipo DESC
+        // 4. Camiones ordenados por tipo descendente
         $camionesPorTipo = DB::table('camiones')->orderBy('tipo', 'desc')->get();
 
         // 5. Camioneros con salario mayor a 16000
         $camionerosSalarioAlto = DB::table('camioneros')->where('salario', '>', 16000)->get();
 
-        // 6. Lugares cuyo CP empieza con 6
+        // 6. Lugares con codigo postal empieza con 6
         $lugaresPorCP = DB::table('lugares')->where('cp', 'like', '6%')->get();
 
-        // 7. Usuarios cuyo perfil contiene "usuario"
+        // 7. Usuarios
         $usuariosPorPerfil = DB::table('usuarios')->where('perfil', 'like', '%usuario%')->get();
 
         // 8. Paquetes con nombre del lugar destino
@@ -43,7 +43,7 @@ class ConsultaController extends Controller
             ->select('camiones.placas', DB::raw("CONCAT(camioneros.nombre, ' ', camioneros.apellidos) AS nombre_completo"))
             ->get();
 
-        // 10. Paquetes entregados por camionero (solo los que tienen entregas)
+        // 10. Paquetes entregados por camionero
         $paquetesPorCamionero = DB::table('camioneros')
             ->join('paquetes', 'camioneros.id_camionero', '=', 'paquetes.id_camionero')
             ->select(

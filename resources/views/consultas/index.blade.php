@@ -7,11 +7,11 @@
     <section class="parents">
         <article class="div11">
             <h2 class="subtitulo">1. Total de Camioneros</h2>
-            <p>Total registrados: <strong>{{ $totalCamioneros }}</strong></p>
+            <p class="contenido">Total registrados: <strong>{{ $totalCamioneros }}</strong></p>
             <h2 class="subtitulo">2. Suma de Salarios</h2>
-            <p>Suma total de salarios: <strong>${{ number_format($sumaSalarios, 2) }}</strong></p>
+            <p class="contenido">Suma total de salarios: <strong>${{ number_format($sumaSalarios, 2) }}</strong></p>
             <h2 class="subtitulo">3. Nombres Completos de Camioneros</h2>
-            <ul>
+            <ul class="contenido">
                 @foreach($nombresCompletos as $item)
                     <li>{{ $item->NombreCompleto }}</li>
                 @endforeach
@@ -19,7 +19,7 @@
         </article>
         <article class="div22">
             <h2 class="subtitulo">9. Camiones y nombre de conductor</h2>
-            <table>
+            <table class="contenido">
                 <thead>
                     <tr>
                         <th>Placas</th>
@@ -36,7 +36,7 @@
                 </tbody>
             </table>    
             <h2 class="subtitulo">10. Total de paquetes entregados por camionero</h2>
-        <table>
+        <table class="contenido">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -59,7 +59,7 @@
         </article>
         <article class="div33">
             <h2 class="subtitulo">5. Camioneros con salario mayor a $16,000</h2>
-            <table>
+            <table class="contenido">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -78,7 +78,7 @@
                 </tbody>
             </table>
             <h2 class="subtitulo">7. Usuarios cuyo perfil contiene "usuario"</h2>
-            <table>
+            <table class="contenido">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -99,7 +99,7 @@
         </article>
         <article class="div44">
             <h2 class="subtitulo">6. Lugares cuyo CP comienza con "6"</h2>
-            <table>
+            <table class="contenido">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -120,7 +120,7 @@
         </article>
         <article class="div55">
             <h2 class="subtitulo">4. Camiones ordenados por tipo (DESC)</h2>
-            <table>
+            <table class="contenido">
                 <thead>
                     <tr>
                         <th>Placas</th>

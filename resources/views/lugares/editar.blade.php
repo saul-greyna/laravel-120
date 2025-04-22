@@ -3,26 +3,31 @@
 @section('title', 'Editar Lugar')
 
 @section('content')
-<main>
-    <h2>Editar Lugar</h2>
+<main id="formulario-container">
+    <h2 id="titulo-formulario">Editar Lugar</h2>
 
-    @if(!empty($lugar))
-    <form method="post" action="/lugares/update/{{ $lugar->id_lugar }}">
+    <form id="lugar-form" method="post" action="/lugares/update/{{ $lugar->id_lugar }}">
         @csrf
 
-        <label>Nombre</label>
-        <input type="text" name="nombre" value="{{ $lugar->nombre }}">
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" value="{{ $lugar->nombre }}">
+        </div>
 
-        <label>Dirección</label>
-        <input type="text" name="direccion" value="{{ $lugar->direccion }}">
+        <div class="campo">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" value="{{ $lugar->direccion }}">
+        </div>
 
-        <label>Código Postal</label>
-        <input type="text" name="cp" value="{{ $lugar->cp }}">
+        <div class="campo">
+            <label for="cp">Código Postal</label>
+            <input type="text" id="cp" name="cp" value="{{ $lugar->cp }}">
+        </div>
 
-        <br><br>
-        <button type="submit">Actualizar</button>
-        <a href="/lugares">Cancelar</a>
+        <div class="botones">
+            <button type="submit" class="boton-elegante">Actualizar</button>
+            <a href="/lugares" id="btn-cancelar">Cancelar</a>
+        </div>
     </form>
-    @endif
 </main>
 @endsection

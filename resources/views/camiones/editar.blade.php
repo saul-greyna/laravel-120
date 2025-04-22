@@ -3,26 +3,31 @@
 @section('title', 'Editar Camión')
 
 @section('content')
-<main>
-    <h2>Editar Camión</h2>
+<main id="formulario-container">
+    <h2 id="titulo-formulario">Editar Camión</h2>
 
-    @if(!empty($camion))
-    <form method="post" action="/camiones/update/{{ $camion->num_camion }}">
+    <form id="camion-form" method="post" action="/camiones/update/{{ $camion->num_camion }}">
         @csrf
 
-        <label>Placas</label>
-        <input type="text" name="placas" value="{{ $camion->placas }}">
+        <div class="campo">
+            <label for="placas">Placas</label>
+            <input type="text" id="placas" name="placas" value="{{ $camion->placas }}">
+        </div>
 
-        <label>Tipo</label>
-        <input type="text" name="tipo" value="{{ $camion->tipo }}">
+        <div class="campo">
+            <label for="tipo">Tipo</label>
+            <input type="text" id="tipo" name="tipo" value="{{ $camion->tipo }}">
+        </div>
 
-        <label>ID del Camionero</label>
-        <input type="text" name="id_camionero" value="{{ $camion->id_camionero }}">
+        <div class="campo">
+            <label for="id_camionero">ID del Camionero</label>
+            <input type="text" id="id_camionero" name="id_camionero" value="{{ $camion->id_camionero }}">
+        </div>
 
-        <br><br>
-        <button type="submit">Actualizar</button>
-        <a href="/camiones">Cancelar</a>
+        <div class="botones">
+            <button type="submit" class="boton-elegante">Actualizar</button>
+            <a href="/camiones" id="btn-cancelar">Cancelar</a>
+        </div>
     </form>
-    @endif
 </main>
 @endsection

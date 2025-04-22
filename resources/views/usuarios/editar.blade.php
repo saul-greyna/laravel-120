@@ -3,29 +3,36 @@
 @section('title', 'Editar Usuario')
 
 @section('content')
-<main>
-    <h2>Editar Usuario</h2>
+<main id="formulario-container">
+    <h2 id="titulo-formulario">Editar Usuario</h2>
 
-    @if(!empty($usuario))
-    <form method="post" action="/usuarios/update/{{ $usuario->id }}">
+    <form id="usuario-form" method="post" action="/usuarios/update/{{ $usuario->id }}">
         @csrf
 
-        <label>Nombre</label>
-        <input type="text" name="nombre" value="{{ $usuario->nombre }}">
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" value="{{ $usuario->nombre }}">
+        </div>
 
-        <label>Correo</label>
-        <input type="email" name="correo" value="{{ $usuario->correo }}">
+        <div class="campo">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" value="{{ $usuario->correo }}">
+        </div>
 
-        <label>Perfil</label>
-        <input type="text" name="perfil" value="{{ $usuario->perfil }}">
+        <div class="campo">
+            <label for="perfil">Perfil</label>
+            <input type="text" id="perfil" name="perfil" value="{{ $usuario->perfil }}">
+        </div>
 
-        <label>Foto (URL o nombre de archivo)</label>
-        <input type="text" name="foto" value="{{ $usuario->foto }}">
+        <div class="campo">
+            <label for="foto">Foto (URL o nombre de archivo)</label>
+            <input type="text" id="foto" name="foto" value="{{ $usuario->foto }}">
+        </div>
 
-        <br><br>
-        <button type="submit">Actualizar</button>
-        <a href="/usuarios">Cancelar</a>
+        <div class="botones">
+            <button type="submit" class="boton-elegante">Actualizar</button>
+            <a href="/usuarios" id="btn-cancelar">Cancelar</a>
+        </div>
     </form>
-    @endif
 </main>
 @endsection
